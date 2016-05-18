@@ -14,9 +14,15 @@ function print(x) {
 
 
 function billTotal(total) {
-	// write code here
+	
+total = (((total + (total * 9.5)/100)) + (total*15)/100);
+total = Math.round(total * 100)/100
+
+   return "Your total comes to $" + total;
+
 }
 
+print(billTotal(21.55));
 // billTotal(21.55); // "Your total comes to $26.83"
 
 // Implement the function called animalNoise that accepts two 
@@ -33,9 +39,16 @@ function billTotal(total) {
 // Emotions: angry, happy, sad, surprised
 // If you're feeling uninspired, feel free to use "smileys" to convey emotion.
 
-function animalNoise(animal, emotion) {
-// TODO: your code here
-}
+// function animalNoise(animal, emotion) {
+// if (animal === cat || emotion === sad) {
+// 	return  surprised;
+// } elseif (animal == horse &&  emotion === sad) {
+// 	return angry;
+// }
+// return happy;
+// }
+
+// print(animalNoise(cat, sad));
 
 
 // The digital sum of a number is the sum of all its digits, 
@@ -55,5 +68,11 @@ function animalNoise(animal, emotion) {
 // return, e.g. digitalSum(8)?
 
 function digitalSum(num) {
-  // TODO: your code here
+ 	if (num < 10 ) { 
+		return num;
+	}
+	 return (num%10) + digitalSum(Math.floor(num/10));
+ 
 }
+
+print(digitalSum(133));
